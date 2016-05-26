@@ -494,7 +494,7 @@ html {
  * The `.lede` class is used to make the introductory text (usually a paragraph)
  * of a document slightly larger: en.wikipedia.org/wiki/Lede_(news)
  */
-.lede {
+.lions-lede {
   font-size: 18px;
   font-size: 1.125rem;
   line-height: 1.33333; }
@@ -584,7 +584,7 @@ img[height] {
  * 1. Fill all available space.
  * 2. Cause children to be automatically equally sized.
  */
-.pack {
+.lions-pack {
   width: 100%;
   /* [1] */
   display: table;
@@ -594,7 +594,7 @@ img[height] {
 /**
      * Cause children to adopt table-like structure.
      */
-.pack__item {
+.lions-pack__item {
   display: table-cell; }
 
 /*------------------------------------*    #LIST-UI
@@ -603,25 +603,25 @@ img[height] {
  * The UI list object creates blocky list items with a keyline separator out of
  * a `ul` or `ol`.
  */
-.list-ui,
-.list-ui__item,
-.list-ui > li {
+.lions-list-ui,
+.lions-list-ui__item,
+.lions-list-ui > li {
   border: 0 solid #ccc; }
 
-.list-ui {
+.lions-list-ui {
   margin: 0;
   padding: 0;
   list-style: none;
   border-top-width: 1px; }
 
-.list-ui__item,
-.list-ui > li {
+.lions-list-ui__item,
+.lions-list-ui > li {
   padding: 24px;
   border-bottom-width: 1px; }
 
 /*------------------------------------*    #TABLES
 \*------------------------------------*/
-.table {
+.lions-table {
   width: 100%; }
 
 /*------------------------------------*    #TABS
@@ -636,7 +636,7 @@ img[height] {
  * 4. Force the object to be the full width of its parent. Combined with [2],
  *    this makes the object behave in a quasi-`display: block;` manner.
  */
-.tabs {
+.lions-tabs {
   margin: 0;
   /* [1] */
   padding: 0;
@@ -651,11 +651,11 @@ img[height] {
   /* [4] */
   text-align: center; }
 
-.tabs__item {
+.lions-tabs__item {
   display: table-cell;
   /* [2] */ }
 
-.tabs__link {
+.lions-tabs__link {
   display: block; }
 
 /*------------------------------------*    #BOX
@@ -666,11 +666,11 @@ img[height] {
 /**
  * 1. So we can apply the `.box` class to naturally-inline elements.
  */
-.box {
+.lions-box {
   display: block;
   /* [1] */
   padding: 24px; }
-  .box > :last-child {
+  .lions-box > :last-child {
     margin-bottom: 0; }
 
 /*------------------------------------*    #BUTTONS
@@ -689,7 +689,7 @@ img[height] {
  * 7. Subtract the border size from the padding value so that buttons do not
  *    grow larger as we add borders.
  */
-.btn {
+.lions-btn {
   display: inline-block;
   /* [1] */
   vertical-align: middle;
@@ -708,7 +708,7 @@ img[height] {
   /* [7] */
   background-color: #4a8ec2;
   border: 1px solid #4a8ec2; }
-  .btn, .btn:hover, .btn:active, .btn:focus {
+  .lions-btn, .lions-btn:hover, .lions-btn:active, .lions-btn:focus {
     text-decoration: none;
     /* [4] */
     color: #fff; }
@@ -716,7 +716,7 @@ img[height] {
 /**
  * Fix a Firefox bug whereby `input type="submit"` gains 2px extra padding.
  */
-.btn::-moz-focus-inner {
+.lions-btn::-moz-focus-inner {
   border: 0;
   padding: 0; }
 
@@ -725,13 +725,13 @@ img[height] {
 /**
  * The list-block object creates blocky list items out of a `ul` or `ol`.
  */
-.list-block {
+.lions-list-block {
   margin: 0;
   padding: 0;
   list-style: none; }
 
-.list-block__item,
-.list-block > li {
+.lions-list-block__item,
+.lions-list-block > li {
   padding: 24px; }
 
 /*------------------------------------*    #LIST-INLINE
@@ -739,11 +739,11 @@ img[height] {
 /**
  * The list-inline object simply displays a list of items in one line.
  */
-.list-inline {
+.lions-list-inline {
   margin: 0;
   padding: 0;
   list-style: none; }
-  .list-inline > li {
+  .lions-list-inline > li {
     display: inline-block; }
 
 /*------------------------------------*    #BLOCK
@@ -755,13 +755,13 @@ img[height] {
  * Stacked image-with-text object. A simple abstraction to cover a very commonly
  * occurring design pattern.
  */
-.block {
+.lions-block {
   display: block; }
 
 /**
      * 1. Eliminate whitespace around images.
      */
-.block__img {
+.lions-block__img {
   vertical-align: middle;
   /* [1] */
   margin-bottom: 24px; }
@@ -769,7 +769,7 @@ img[height] {
 /**
      * Text-content.
      */
-.block__body {
+.lions-block__body {
   display: block; }
 
 /*------------------------------------*    #LAYOUT
@@ -783,7 +783,7 @@ img[height] {
 /**
  * Begin a layout group.
  */
-.layout {
+.lions-layout {
   list-style: none;
   margin: 0;
   padding: 0;
@@ -796,7 +796,7 @@ img[height] {
      * 4. Full-width unless told to behave otherwise.
      * 5. Required to combine fluid widths and fixed gutters.
      */
-.layout__item {
+.lions-layout__item {
   display: inline-block;
   /* [1] */
   padding-left: 24px;
@@ -806,18 +806,121 @@ img[height] {
   width: 100%;
   /* [4] */ }
 
+/**
+     * Layouts with tiny gutters.
+     */
+.lions-layout--tiny {
+  margin-left: -6px; }
+  .lions-layout--tiny > .lions-layout__item {
+    padding-left: 6px; }
+
+/**
+     * Layouts with small gutters.
+     */
+.lions-layout--small {
+  margin-left: -12px; }
+  .lions-layout--small > .lions-layout__item {
+    padding-left: 12px; }
+
+/**
+     * Layouts with large gutters.
+     */
+.lions-layout--large {
+  margin-left: -48px; }
+  .lions-layout--large > .lions-layout__item {
+    padding-left: 48px; }
+
+/**
+     * Layouts with huge gutters.
+     */
+.lions-layout--huge {
+  margin-left: -96px; }
+  .lions-layout--huge > .lions-layout__item {
+    padding-left: 96px; }
+
+/**
+     * Layouts with no gutters.
+     */
+.lions-layout--flush {
+  margin-left: 0; }
+  .lions-layout--flush > .lions-layout__item {
+    padding-left: 0; }
+
+/**
+     * Reversed rendered order of layout items, e.g. items 1, 2, 3, 4 in your
+     * markup will display in order 4, 3, 2, 1 on your page.
+     */
+.lions-layout--rev {
+  direction: rtl;
+  text-align: left; }
+  .lions-layout--rev > .lions-layout__item {
+    direction: ltr;
+    text-align: left; }
+
+/**
+     * Align layout items to the vertical centers of each other.
+     */
+.lions-layout--middle > .lions-layout__item {
+  vertical-align: middle; }
+
+/**
+     * Align layout items to the vertical bottoms of each other.
+     */
+.lions-layout--bottom > .lions-layout__item {
+  vertical-align: bottom; }
+
+/**
+     * Make the layout items fill up from the right hand side.
+     */
+.lions-layout--right {
+  text-align: right; }
+  .lions-layout--right > .lions-layout__item {
+    text-align: left; }
+
+/**
+     * Make the layout items fill up from the center outward.
+     */
+.lions-layout--center {
+  text-align: center; }
+  .lions-layout--center > .lions-layout__item {
+    text-align: left; }
+
+/**
+     * Cause layout items to take up a non-explicit amount of width.
+     */
+.lions-layout--auto > .lions-layout__item {
+  width: auto; }
+
 /*------------------------------------*    #LIST-BARE
 \*------------------------------------*/
 /**
  * The list-bare object simply removes any indents and bullet points from lists.
  */
-.list-bare {
+.lions-list-bare {
   margin: 0;
   padding: 0;
   list-style: none; }
 
+/*------------------------------------*    #CONTAINER
+\*------------------------------------*/
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 10px; }
+
 /*------------------------------------*    #COMPONENTS/
 \*------------------------------------*/
+/**
+ * The site’s main page-head can have two different states:
+ *
+ * 1) Regular page-head with no backgrounds or extra treatments; it just
+ *    contains the logo and nav.
+ * 2) A masthead that has a fluid-height (becoming fixed after a certain point)
+ *    which has a large background image, and some supporting text.
+ *
+ * The regular page-head is incredibly simple, but the masthead version has some
+ * slightly intermingled dependency with the wrapper that lives inside it.
+ */
 /*------------------------------------*    #TRUMPS/
 \*------------------------------------*/
 /*------------------------------------*    #SPACING
@@ -874,7 +977,7 @@ img[height] {
  * over and over in your markup.
  */
 .clearfix:after,
-.box:after {
+.lions-box:after {
   content: "";
   display: table;
   clear: both; }
@@ -891,32 +994,32 @@ img[height] {
    <h2 class="alpha">Lorem ipsum</h2>
  *
  */
-.alpha {
+.lions-alpha {
   font-size: 36px;
   font-size: 2.25rem;
   line-height: 1.33333; }
 
-.beta {
+.lions-beta {
   font-size: 30px;
   font-size: 1.875rem;
   line-height: 1.6; }
 
-.gamma {
+.lions-gamma {
   font-size: 24px;
   font-size: 1.5rem;
   line-height: 1; }
 
-.delta {
+.lions-delta {
   font-size: 20px;
   font-size: 1.25rem;
   line-height: 1.2; }
 
-.epsilon {
+.lions-epsilon {
   font-size: 16px;
   font-size: 1rem;
   line-height: 1.5; }
 
-.zeta {
+.lions-zeta {
   font-size: 14px;
   font-size: 0.875rem;
   line-height: 1.71429; }
@@ -930,37 +1033,37 @@ img[height] {
  *
  * <div class="u-7/12">
  */
-.u-1\/1 {
+.lions-u-1-of-1 {
   width: 100% !important; }
 
-.u-1\/2 {
+.lions-u-1-of-2 {
   width: 50% !important; }
 
-.u-1\/3 {
+.lions-u-1-of-3 {
   width: 33.33333% !important; }
 
-.u-2\/3 {
+.lions-u-2-of-3 {
   width: 66.66667% !important; }
 
-.u-1\/4 {
+.lions-u-1-of-4 {
   width: 25% !important; }
 
-.u-2\/4 {
+.lions-u-2-of-4 {
   width: 50% !important; }
 
-.u-3\/4 {
+.lions-u-3-of-4 {
   width: 75% !important; }
 
-.u-1\/5 {
+.lions-u-1-of-5 {
   width: 20% !important; }
 
-.u-2\/5 {
+.lions-u-2-of-5 {
   width: 40% !important; }
 
-.u-3\/5 {
+.lions-u-3-of-5 {
   width: 60% !important; }
 
-.u-4\/5 {
+.lions-u-4-of-5 {
   width: 80% !important; }
 
 /*------------------------------------*    #WIDTHS-RESPONSIVE
@@ -969,145 +1072,145 @@ img[height] {
  * Responsive width classes based on your responsive settings.
  */
 @media screen and (max-width: 44.9375em) {
-  .u-1\/1-palm {
+  .lions-u-1-of-1-palm {
     width: 100% !important; }
-  .u-1\/2-palm {
+  .lions-u-1-of-2-palm {
     width: 50% !important; }
-  .u-1\/3-palm {
+  .lions-u-1-of-3-palm {
     width: 33.33333% !important; }
-  .u-2\/3-palm {
+  .lions-u-2-of-3-palm {
     width: 66.66667% !important; }
-  .u-1\/4-palm {
+  .lions-u-1-of-4-palm {
     width: 25% !important; }
-  .u-2\/4-palm {
+  .lions-u-2-of-4-palm {
     width: 50% !important; }
-  .u-3\/4-palm {
+  .lions-u-3-of-4-palm {
     width: 75% !important; }
-  .u-1\/5-palm {
+  .lions-u-1-of-5-palm {
     width: 20% !important; }
-  .u-2\/5-palm {
+  .lions-u-2-of-5-palm {
     width: 40% !important; }
-  .u-3\/5-palm {
+  .lions-u-3-of-5-palm {
     width: 60% !important; }
-  .u-4\/5-palm {
+  .lions-u-4-of-5-palm {
     width: 80% !important; } }
 
 @media screen and (min-width: 45em) and (max-width: 63.9375em) {
-  .u-1\/1-lap {
+  .lions-u-1-of-1-lap {
     width: 100% !important; }
-  .u-1\/2-lap {
+  .lions-u-1-of-2-lap {
     width: 50% !important; }
-  .u-1\/3-lap {
+  .lions-u-1-of-3-lap {
     width: 33.33333% !important; }
-  .u-2\/3-lap {
+  .lions-u-2-of-3-lap {
     width: 66.66667% !important; }
-  .u-1\/4-lap {
+  .lions-u-1-of-4-lap {
     width: 25% !important; }
-  .u-2\/4-lap {
+  .lions-u-2-of-4-lap {
     width: 50% !important; }
-  .u-3\/4-lap {
+  .lions-u-3-of-4-lap {
     width: 75% !important; }
-  .u-1\/5-lap {
+  .lions-u-1-of-5-lap {
     width: 20% !important; }
-  .u-2\/5-lap {
+  .lions-u-2-of-5-lap {
     width: 40% !important; }
-  .u-3\/5-lap {
+  .lions-u-3-of-5-lap {
     width: 60% !important; }
-  .u-4\/5-lap {
+  .lions-u-4-of-5-lap {
     width: 80% !important; } }
 
 @media screen and (min-width: 45em) {
-  .u-1\/1-lap-and-up {
+  .lions-u-1-of-1-lap-and-up {
     width: 100% !important; }
-  .u-1\/2-lap-and-up {
+  .lions-u-1-of-2-lap-and-up {
     width: 50% !important; }
-  .u-1\/3-lap-and-up {
+  .lions-u-1-of-3-lap-and-up {
     width: 33.33333% !important; }
-  .u-2\/3-lap-and-up {
+  .lions-u-2-of-3-lap-and-up {
     width: 66.66667% !important; }
-  .u-1\/4-lap-and-up {
+  .lions-u-1-of-4-lap-and-up {
     width: 25% !important; }
-  .u-2\/4-lap-and-up {
+  .lions-u-2-of-4-lap-and-up {
     width: 50% !important; }
-  .u-3\/4-lap-and-up {
+  .lions-u-3-of-4-lap-and-up {
     width: 75% !important; }
-  .u-1\/5-lap-and-up {
+  .lions-u-1-of-5-lap-and-up {
     width: 20% !important; }
-  .u-2\/5-lap-and-up {
+  .lions-u-2-of-5-lap-and-up {
     width: 40% !important; }
-  .u-3\/5-lap-and-up {
+  .lions-u-3-of-5-lap-and-up {
     width: 60% !important; }
-  .u-4\/5-lap-and-up {
+  .lions-u-4-of-5-lap-and-up {
     width: 80% !important; } }
 
 @media screen and (max-width: 63.9375em) {
-  .u-1\/1-portable {
+  .lions-u-1-of-1-portable {
     width: 100% !important; }
-  .u-1\/2-portable {
+  .lions-u-1-of-2-portable {
     width: 50% !important; }
-  .u-1\/3-portable {
+  .lions-u-1-of-3-portable {
     width: 33.33333% !important; }
-  .u-2\/3-portable {
+  .lions-u-2-of-3-portable {
     width: 66.66667% !important; }
-  .u-1\/4-portable {
+  .lions-u-1-of-4-portable {
     width: 25% !important; }
-  .u-2\/4-portable {
+  .lions-u-2-of-4-portable {
     width: 50% !important; }
-  .u-3\/4-portable {
+  .lions-u-3-of-4-portable {
     width: 75% !important; }
-  .u-1\/5-portable {
+  .lions-u-1-of-5-portable {
     width: 20% !important; }
-  .u-2\/5-portable {
+  .lions-u-2-of-5-portable {
     width: 40% !important; }
-  .u-3\/5-portable {
+  .lions-u-3-of-5-portable {
     width: 60% !important; }
-  .u-4\/5-portable {
+  .lions-u-4-of-5-portable {
     width: 80% !important; } }
 
 @media screen and (min-width: 64em) {
-  .u-1\/1-desk {
+  .lions-u-1-of-1-desk {
     width: 100% !important; }
-  .u-1\/2-desk {
+  .lions-u-1-of-2-desk {
     width: 50% !important; }
-  .u-1\/3-desk {
+  .lions-u-1-of-3-desk {
     width: 33.33333% !important; }
-  .u-2\/3-desk {
+  .lions-u-2-of-3-desk {
     width: 66.66667% !important; }
-  .u-1\/4-desk {
+  .lions-u-1-of-4-desk {
     width: 25% !important; }
-  .u-2\/4-desk {
+  .lions-u-2-of-4-desk {
     width: 50% !important; }
-  .u-3\/4-desk {
+  .lions-u-3-of-4-desk {
     width: 75% !important; }
-  .u-1\/5-desk {
+  .lions-u-1-of-5-desk {
     width: 20% !important; }
-  .u-2\/5-desk {
+  .lions-u-2-of-5-desk {
     width: 40% !important; }
-  .u-3\/5-desk {
+  .lions-u-3-of-5-desk {
     width: 60% !important; }
-  .u-4\/5-desk {
+  .lions-u-4-of-5-desk {
     width: 80% !important; } }
 
 @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
-  .u-1\/1-retina {
+  .lions-u-1-of-1-retina {
     width: 100% !important; }
-  .u-1\/2-retina {
+  .lions-u-1-of-2-retina {
     width: 50% !important; }
-  .u-1\/3-retina {
+  .lions-u-1-of-3-retina {
     width: 33.33333% !important; }
-  .u-2\/3-retina {
+  .lions-u-2-of-3-retina {
     width: 66.66667% !important; }
-  .u-1\/4-retina {
+  .lions-u-1-of-4-retina {
     width: 25% !important; }
-  .u-2\/4-retina {
+  .lions-u-2-of-4-retina {
     width: 50% !important; }
-  .u-3\/4-retina {
+  .lions-u-3-of-4-retina {
     width: 75% !important; }
-  .u-1\/5-retina {
+  .lions-u-1-of-5-retina {
     width: 20% !important; }
-  .u-2\/5-retina {
+  .lions-u-2-of-5-retina {
     width: 40% !important; }
-  .u-3\/5-retina {
+  .lions-u-3-of-5-retina {
     width: 60% !important; }
-  .u-4\/5-retina {
+  .lions-u-4-of-5-retina {
     width: 80% !important; } }

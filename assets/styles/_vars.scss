@@ -1,5 +1,26 @@
 // Brand colors
 $primary-brand:			#ffcc33 !default;
 $grey:					#dadada !default;
-$dark-grey:				#929395 !default;
+$dark-grey:             #929395 !default;
 
+// _objects.layout 
+$inuit-namespace:           "lions-";
+$inuit-base-spacing-unit:    1;
+
+$inuit-enable-layout--tiny:     true;
+$inuit-enable-layout--small:    true;
+$inuit-enable-layout--large:    true;
+$inuit-enable-layout--huge:     true;
+$inuit-enable-layout--flush:    true;
+$inuit-enable-layout--rev:      true;
+$inuit-enable-layout--middle:   true;
+$inuit-enable-layout--bottom:   true;
+$inuit-enable-layout--right:    true;
+$inuit-enable-layout--center:   true;
+$inuit-enable-layout--auto:     true;
+
+$inuit-global-border-box:       true;
+
+$inuit-responsive-settings:     true;
+
+$inuit-use-fractions:           false;
